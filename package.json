@@ -1,0 +1,18 @@
+{
+  "name": "bedrock",
+  "version": "0.0.0",
+  "description": "a template for basic js packages",
+  "main": "src/modules/index.js",
+  "devDependencies": {
+    "browserify-istanbul": "~0.1.5",
+    "gulp": "~3.8.11",
+    "gulp-tasks-riq": "~0.2.0",
+    "karma": "~0.12.31",    
+    "yargs": "~3.9.0"
+  },
+  "scripts": {
+    "test": "gulp karma"
+  },
+  "author": "rusty.camden@gmail.com",
+  "license": "MIT"
+}

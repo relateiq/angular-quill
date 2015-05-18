@@ -1,0 +1,9 @@
+.idea
+.sass-cache
+node_modules
+build
+tmp
+test-assets
+release
+/coverage
+release
