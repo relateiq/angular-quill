@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/relateiq/angular-quill/issues"
   },
-  "homepage": "https://github.com/relateiq/angular-quill"
+  "homepage": "https://github.com/relateiq/angular-quill",
+  "dependencies": {
+    "quill": "~0.19.12"
+  }
 }
