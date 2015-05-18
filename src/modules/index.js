@@ -11,7 +11,7 @@ var Quill = require('quill');
    *
    */
 
-angular.module('angular-quill', [])
+module.exports = angular.module('angular-quill', [])
     .directive("quill", ['$timeout',
         function($timeout) {
             return {
@@ -76,4 +76,4 @@ angular.module('angular-quill', [])
                 }
             };
         }
-    ]);
+    ]).name;
