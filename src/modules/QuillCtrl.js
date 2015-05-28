@@ -21,20 +21,22 @@ module.exports = angular.module('QuillCtrl', [])
         QuillCtrl.registerToolbar = registerToolbar;
         QuillCtrl.registerEditor = registerEditor;
 
-        ngModel.$render = function() {
-            if (angular.isDefined(editor)) {
-                $timeout(function() {
-                    editor.setHTML(ngModel.$viewValue || '');
-                });
-            }
 
-        };
 
         function init(ngModelCtrl, extraOptions) {
             ngModel = ngModelCtrl;
             if (extraOptions) {
                 angular.extend(options, extraOptions);
             }
+
+            ngModel.$render = function() {
+                if (angular.isDefined(editor)) {
+                    $timeout(function() {
+                        editor.setHTML(ngModel.$viewValue || '');
+                    });
+                }
+
+            };
 
             $timeout(setupEditor);
         }
