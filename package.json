@@ -1,6 +1,6 @@
 {
     "name": "angular-quill",
-    "version": "0.1.2",
+    "version": "0.1.3",
     "description": "a template for basic js packages",
     "main": "src/modules/index.js",
     "publishConfig": {
