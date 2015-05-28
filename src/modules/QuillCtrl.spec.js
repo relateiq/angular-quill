@@ -8,7 +8,8 @@ describe('QuillCtrl', function() {
 
     beforeEach(inject(function($controller, $rootScope) {
         this.QuillCtrl = $controller('QuillCtrl', {
-            $scope: $rootScope.$new()
+            $scope: $rootScope.$new(),
+            $element: angular.element('<div/>')
         });
     }));
 

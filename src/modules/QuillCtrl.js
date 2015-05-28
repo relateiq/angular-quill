@@ -1,7 +1,7 @@
 var Quill = require('quill');
 
 module.exports = angular.module('QuillCtrl', [])
-    .controller('QuillCtrl', function($scope, $timeout) {
+    .controller('QuillCtrl', function($scope, $element, $timeout) {
         var QuillCtrl = this;
 
         var editor;
@@ -45,6 +45,11 @@ module.exports = angular.module('QuillCtrl', [])
         function setupEditor() {
             if (toolbarElement) {
                 options.modules.toolbar.container = toolbarElement[0];
+            }
+
+            if (!editorElement) {
+                editorElement = angular.element('<div/>');
+                $element.append(editorElement);
             }
             editor = new Quill(editorElement[0], options);
 
