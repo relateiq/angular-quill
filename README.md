@@ -1,7 +1,7 @@
 angular-quill
 ================
 
-(This fork adapts the library for proper use with browserify)
+(This fork adapts the library for proper use with browserify and is still being developed, use at own risk)
 
 Angular Quill is an angular directive for the Quill editor.  http://quilljs.com/
 
