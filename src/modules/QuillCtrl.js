@@ -1,3 +1,5 @@
+var Quill = require('quill');
+
 module.exports = angular.module('QuillCtrl', [])
     .controller('QuillCtrl', function($scope, $timeout) {
         var QuillCtrl = this;
@@ -13,8 +15,7 @@ module.exports = angular.module('QuillCtrl', [])
                 },
                 'image-tooltip': true,
                 'link-tooltip': true
-            },
-            theme: 'snow'
+            }
         };
 
         QuillCtrl.init = init;
@@ -43,9 +44,9 @@ module.exports = angular.module('QuillCtrl', [])
 
         function setupEditor() {
             if (toolbarElement) {
-                options.modules.toolbar.container = toolbarElement;
+                options.modules.toolbar.container = toolbarElement[0];
             }
-            editor = new Quill(editorElement, options);
+            editor = new Quill(editorElement[0], options);
 
             ngModel.$render();
 
