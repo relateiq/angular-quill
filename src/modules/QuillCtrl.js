@@ -8,6 +8,7 @@ module.exports = angular.module('QuillCtrl', [])
         var editorElement;
         var toolbarElement;
         var ngModel;
+        var initialized = false;
         var options = {
             modules: {
                 'toolbar': {
@@ -57,6 +58,10 @@ module.exports = angular.module('QuillCtrl', [])
 
             editor.on('text-change', function(delta, source) {
                 updateModel(this.getHTML());
+                if (!initialized) {
+                    ngModel.$setPristine();
+                    initialized = true;
+                }
             });
 
             editor.once('selection-change', function(hasFocus) {
