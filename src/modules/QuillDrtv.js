@@ -1,6 +1,6 @@
 module.exports = angular.module('QuillDrtv', [require('./QuillCtrl')])
-    .directive("quill", ['$timeout',
-        function($timeout) {
+    .directive("quill", ['$timeout', '$parse',
+        function($timeout, $parse) {
             return {
                 restrict: 'A',
                 require: ['ngModel', 'quill'],
@@ -10,7 +10,16 @@ module.exports = angular.module('QuillDrtv', [require('./QuillCtrl')])
                     var QuillCtrl = ctrls[1];
 
                     var extraOptions = attrs.quill ? scope.$eval(attrs.quill) : {};
-                    QuillCtrl.init(ngModel, extraOptions);
+                    var onSetupFn;
+                    if (attrs.quillOnSetup) {
+                        var parse = $parse(attrs.quillOnSetup);
+                        onSetupFn = function(editor) {
+                            return parse(scope, {
+                                editor: editor
+                            });
+                        };
+                    }
+                    QuillCtrl.init(ngModel, extraOptions, onSetupFn);
 
                 }
             };

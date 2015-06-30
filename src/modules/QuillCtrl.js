@@ -7,6 +7,7 @@ module.exports = angular.module('QuillCtrl', [])
         var editor;
         var editorElement;
         var toolbarElement;
+        var onSetupFn;
         var ngModel;
         var initialized = false;
         var options = {
@@ -25,7 +26,8 @@ module.exports = angular.module('QuillCtrl', [])
 
 
 
-        function init(ngModelCtrl, extraOptions) {
+        function init(ngModelCtrl, extraOptions, setupFn) {
+            onSetupFn = setupFn;
             ngModel = ngModelCtrl;
             if (extraOptions) {
                 angular.extend(options, extraOptions);
@@ -52,7 +54,12 @@ module.exports = angular.module('QuillCtrl', [])
                 editorElement = angular.element('<div/>');
                 $element.append(editorElement);
             }
-            editor = new Quill(editorElement[0], options);
+
+            var editorElem = editorElement[0];
+            editor = new Quill(editorElem, options);
+            if (onSetupFn) {
+                onSetupFn(editor);
+            }
 
             ngModel.$render();
 
