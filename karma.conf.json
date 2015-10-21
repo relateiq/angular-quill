@@ -1,0 +1,27 @@
+{
+  "frameworks": [
+    "jasmine"
+  ],
+  "basePath": "",
+  "files": [
+    "src/**/*.spec.js"
+  ],
+  "preprocessors": {
+    "src/**/*.spec.js": "browserify"
+  },
+  "autoWatch": true,
+  "reporters": [
+    "progress"
+  ],
+  "browsers": [
+    "PhantomJS"
+  ],
+  "junitReporter": {
+    "outputFile": "test_out/unit.xml",
+    "suite": "unit"
+  },
+  "notifyReporter": {
+    "reportSuccess": false
+  },
+  "browserNoActivityTimeout": 3000000
+}

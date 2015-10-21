@@ -12,10 +12,17 @@
     "gulp": "~3.8.11",
     "gulp-tasks-riq": "~0.2.0",
     "karma": "~0.12.31",
-    "yargs": "~3.9.0"
+    "chokidar-cli": "~1.0.1",
+    "tape": "~4.2.1",
+    "yargs": "~3.26.0"
+  },
+  "iqproj": {
+    "app": false
   },
   "scripts": {
-    "test": "gulp karma"
+    "test": "bin/iqb test",
+    "start": "bin/iqb start",
+    "preversion": "bin/iqb test"
   },
   "author": "rusty.camden@gmail.com",
   "license": "MIT",
