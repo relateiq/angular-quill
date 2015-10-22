@@ -1,7 +1,7 @@
 var angular = require('angular');
 require('angular-mocks');
 
-describe('QuillCtrl', function() {
+xdescribe('QuillCtrl', function() {
     beforeEach(function() {
         angular.mock.module(require('./QuillCtrl'));
     });
