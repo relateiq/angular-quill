@@ -2,7 +2,7 @@
 [npm-badge]: https://img.shields.io/npm/v/angular-quill.svg
 [npm-badge-url]: https://www.npmjs.com/package/angular-quill
 
-angular-quill
+Angular-Quill
 ================
 
 (This fork adapts the library for proper use with browserify and is still being developed, use at own risk)
